@@ -7,3 +7,7 @@ Seperate Database for admin and user
 
 STEPS TO RUN:
 Download the project in webapp folder in /var/lib/tomcat7
+
+Front.jsp is the front page and the rest of the hyperlinks except contact redirect to correseponding jsp files
+
+Contains few redundant jsp files(was too lazy to remove them)
