@@ -1,5 +1,5 @@
 # LIbraryManagementSystem
-A library management system webapp with JSP on LAMP 
+A library management system webapp with JSP on LAMP / WAMP
 
 contact.jsp not defined
 
