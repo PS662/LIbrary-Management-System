@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>Validation using JavaScripts</title>
+	<link rel="stylesheet" type="text/css" href="validation.css">
+    <style>
+     a:visited {
+    color: black;
+    text-decoration: none;
+}
+        a {
+    color: black;
+    text-decoration: none;
+}
+    </style>
+</head>
+<script type="text/javascript">
+ function validate(){
+	var error = 0, error1=0, error2=0, error3=0;
+	var h_form = document.getElementsByTagName('form')[0];
+
+	if(document.getElementById('name').value == ''){
+		error = 1;
+		console.log('Name isEmpty');
+		document.getElementById('err_name').className = 'wrong';
+	}
+	else{
+		error = 0;
+		document.getElementById('err_name').className = 'correct';
+	}
+
+	if(document.getElementById('password').value == ''){
+		error1 = 1;
+		console.log('Password isEmpty');
+		document.getElementById('err_pass').className = 'wrong';
+	}
+	else{
+		error1 = 0;
+		document.getElementById('err_pass').className = 'correct';
+	}
+
+	if(document.getElementById('repass').value == ''){
+		error2 = 1;
+		console.log('repass isEmpty');
+		document.getElementById('err_repass').className = 'wrong';
+	}
+	else if(document.getElementById('repass').value != document.getElementById('password').value){
+		error2 = 1;
+        alert('Passwords don\'t match');
+		document.getElementById('err_repass').className = 'wrong';
+	}
+	else{
+		error2 = 0;
+		document.getElementById('err_repass').className = 'correct';
+	}
+
+	if(document.getElementById('email').value == ''){
+		error3 = 1;
+		alert('Invalid EMail');
+		console.log('Email isEmpty');
+		document.getElementById('err_email').className = 'wrong';
+	}
+	else{
+		error3 = 0;
+		document.getElementById('err_email').className = 'correct';
+	}
+	if (error == 0 && error1 == 0 && error2 == 0 && error3 == 0) {
+	h_form.submit();
+	}
+}
+    
+</script>
+
+
+<body >
+    <ul class="nav">
+        <li class="left"><b><em>Library Management System</em></b></li>
+        <li class="right">Contact Us</li>
+        <li class="right"><a href="validation.html">Login</a></li>
+        <li class="right">Search</li>
+        <li class="right">Home</li>
+    </ul>
+    <div id="division"></div>
+
+<div id="content">
+<form method="post" ><onsubmit="event.preventDefault(); validate();" action="validation.html">
+	<label for="name">Name</label>
+	<input type="text" name="name" id="name"> <i class=" " id="err_name">&emsp;</i><br>
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password"  ><i class=" " id="err_pass">&emsp;</i><br>
+	<label for="repass">Re-Type Password</label>
+	<input type="password" name="repass" id="repass"  ><i class=" " id="err_repass">&emsp;</i><br>
+	<label for="email">E-mail</label>
+	<input type="email" name="email" id="email"  ><i class=" " id="err_email">&emsp;</i><br>
+	<input type="submit" value="Register" name="submit" id="submit">
+    </form>
+    </div>
+</body>
+</html>
